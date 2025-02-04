@@ -8,7 +8,7 @@ export default function Home() {
     })
       .then(response => response.blob()) // Chuyển response thành Blob (file)
       .then(blob => {
-        const url = window.URL.createObjectURL(blob);
+        var url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
         a.download = 'data.xlsx'; // Đặt tên file khi tải về
