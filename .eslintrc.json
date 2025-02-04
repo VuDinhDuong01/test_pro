@@ -15,8 +15,8 @@
         "no-var": "error",
         // cuối câu phải có dấu ;
         "semi": [
-            "error"
-            // "always"
+            "error",
+           "always"
         ]
     }
 }
