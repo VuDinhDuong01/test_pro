@@ -1,14 +1,13 @@
-
-'use client'
+'use client';
 export default function Home() {
   const handleDownload = () => {
-    console.log(123)
+    console.log(123);
     fetch('http://localhost:3000/export', {
       method: 'GET',
     })
-      .then(response => response.blob()) // Chuyển response thành Blob (file)
-      .then(blob => {
-        var url = window.URL.createObjectURL(blob);
+      .then((response) => response.blob()) // Chuyển response thành Blob (file)
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
         a.download = 'data.xlsx'; // Đặt tên file khi tải về
@@ -16,9 +15,11 @@ export default function Home() {
         a.click();
         document.body.removeChild(a);
       })
-      .catch(error => console.error('Error downloading file:', error));
-  }
+      .catch((error) => console.error('Error downloading file:', error));
+  };
   return (
-    <div><button onClick={handleDownload}>download</button></div>
+    <div>
+      <button onClick={handleDownload}>download</button>
+    </div>
   );
 }
