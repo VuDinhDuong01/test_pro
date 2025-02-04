@@ -1,22 +1,6 @@
 {
-    "extends": [
-        "next/core-web-vitals",
-        "plugin:prettier/recommended"
-    ],
     "rules": {
-        "prettier/prettier": [
-            "error",
-            {
-                "semi": true,
-                "singleQuote": true
-            }
-        ],
-        // không dùng khai báo bằng var
-        "no-var": "error",
-        // cuối câu phải có dấu ;
-        "semi": [
-            "error",
-           "always"
-        ]
+      "semi": ["error", "always"],
+      "no-var": "error"
     }
-}
+  }
