@@ -12,7 +12,7 @@ export default function Home() {
         a.href = url;
         a.download = 'data.xlsx'; // Đặt tên file khi tải về
         document.body.appendChild(a);
-        a.click();
+        a.click()
         document.body.removeChild(a);
       })
       .catch((error) => console.error('Error downloading file:', error));
