@@ -9,9 +9,9 @@ export default function Home() {
       .then((blob) => {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
-        a.href = url
+        a.href = url;
         a.download = 'data.xlsx'; // Đặt tên file khi tải về
-        document.body.appendChild(a)
+        document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
       })
