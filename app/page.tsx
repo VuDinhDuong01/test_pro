@@ -5,7 +5,7 @@ export default function Home() {
     fetch('http://localhost:3000/export', {
       method: 'GET',
     })
-      .then((response) => response.blob()) // Chuyển response thành Blob (file)
+      .then((response) => response.blob())
       .then((blob) => {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
