@@ -12,7 +12,6 @@ const eslintConfig = [
       'react/jsx-uses-vars': 'error',
       'no-var': 'error',
       "no-unused-vars": "error" 
-
     },
   }),
 ]

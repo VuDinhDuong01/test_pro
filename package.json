@@ -6,16 +6,20 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky && husky install"
+    "prepare": "husky && husky install",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@ant-design/pro-components": "^2.8.4",
     "ant": "^0.2.0",
+    "commitlint": "^19.7.1",
     "next": "^15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
