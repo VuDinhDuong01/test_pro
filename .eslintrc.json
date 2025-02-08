@@ -1,7 +1,7 @@
 {
-    "rules": {
-      "semi": ["error", "always"],
-      "no-var": "error",
-      "no-const-assign": "error"
-    }
+  "rules": {
+    "semi": ["error", "always"],
+    "no-var": "error",
+    "no-const-assign": "error"
   }
+}
