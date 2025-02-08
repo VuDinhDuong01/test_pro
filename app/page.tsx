@@ -1,25 +1,50 @@
 'use client';
+
+import {
+  ProForm,
+  ProFormDatePicker,
+  ProFormSelect,
+  ProFormText,
+} from '@ant-design/pro-components';
+import { useRef } from 'react';
 export default function Home() {
-  const handleDownload = () => {
-    console.log(123);
-    fetch('http://localhost:3000/export', {
-      method: 'GET',
-    })
-      .then((response) => response.blob())
-      .then((blob) => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'data.xlsx'; // Đặt tên file khi tải về
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      })
-      .catch((error) => console.error('Error downloading file:', error));
-  };
+  const formRef = useRef(null);
   return (
-    <div>
-      <button onClick={handleDownload}>download</button>
-    </div>
+    <ProForm
+      formRef={formRef}
+      onFinish={async (values) => {
+        // Đảm bảo luôn có key 'category'
+        console.log('Submitted values:', { ...values });
+      }}
+    >
+      <ProFormSelect
+        options={[
+          { label: 'Option 1', value: 'option1' },
+          { label: 'Option 2', value: 'option2' },
+        ]}
+        name="category"
+        placeholder="Please select"
+        fieldProps={{
+          allowClear: true, // Cho phép xóa dữ liệu
+          onChange: (value) => {
+            formRef.current?.setFieldsValue({
+              category: value === undefined ? '' : value,
+            });
+          },
+        }}
+      />
+      <ProFormText name="name" />
+      <ProFormDatePicker
+        name="dob"
+        fieldProps={{
+          allowClear: true, // Cho phép xóa dữ liệu
+          onChange: (value) => {
+            formRef.current?.setFieldsValue({
+              dob: value === null ? '' : value,
+            });
+          },
+        }}
+      />
+    </ProForm>
   );
 }
