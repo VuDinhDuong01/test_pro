@@ -5,13 +5,10 @@ import {
   ProFormSelect,
   ProFormText,
 } from '@ant-design/pro-components';
-import { useRef } from 'react';
-export default function Home() {
-  const formRef = useRef(null);
 
+export default function Home() {
   return (
     <ProForm
-      formRef={formRef}
       onFinish={async (values) => {
         // Đảm bảo luôn có key 'category'
         console.log('Submitted values:', { ...values });
@@ -26,11 +23,6 @@ export default function Home() {
         placeholder="Please select"
         fieldProps={{
           allowClear: true, // Cho phép xóa dữ liệu
-          onChange: (value) => {
-            formRef.current?.setFieldsValue({
-              category: value === undefined ? '' : value,
-            });
-          },
         }}
       />
       <ProFormText name="name" />
