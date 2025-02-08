@@ -7,8 +7,8 @@ import {
 } from '@ant-design/pro-components';
 
 export default function Home() {
-  let handleSubmit = () => {};
-  let abd = 1;
+  const handleSubmit = () => {};
+  const abd = 1;
   return (
     <ProForm
       onFinish={async (values) => {
