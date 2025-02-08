@@ -10,7 +10,8 @@ const eslintConfig = [
       'react/no-unescaped-entities': 'error',
       '@next/next/no-page-custom-font': 'error',
       'react/jsx-uses-vars': 'error',
-      'no-var': 'error', 
+      'no-var': 'error',
+      "no-unused-vars": "error" 
 
     },
   }),
