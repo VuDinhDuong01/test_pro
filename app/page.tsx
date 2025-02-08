@@ -9,18 +9,6 @@ import {
 export default function Home() {
   return (
     <ProForm
-
-
-
-
-
-
-
-
-
-
-
-    
       onFinish={async (values) => {
         // Đảm bảo luôn có key 'category'
         console.log('Submitted values:', { ...values });
