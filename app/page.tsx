@@ -14,6 +14,7 @@ export default function Home() {
       onFinish={async (values) => {
         // Đảm bảo luôn có key 'category'
         console.log('Submitted values:', { ...values });
+        console.log(123);
       }}
     >
       <ProFormSelect
